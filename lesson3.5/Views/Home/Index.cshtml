@@ -1,0 +1,35 @@
+﻿@model YourProjectName.Models.Member
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <div>
+        <label>Name:</label>
+        @Html.TextBoxFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+    <div>
+        <label>Email:</label>
+        @Html.TextBoxFor(model => model.Email)
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div>
+        <label>Password:</label>
+        @Html.PasswordFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+    <div>
+        <label>Confirm Password:</label>
+        @Html.PasswordFor(model => model.ConfirmPassword)
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+    </div>
+    <div>
+        <input type="submit" value="Cập nhật" />
+    </div>
+}
